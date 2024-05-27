@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import EditPatient from './EditPatient'; 
+import EditPatient from './EditPatient';
 
 const Home = () => {
   const [patients, setPatients] = useState([]);

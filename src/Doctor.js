@@ -5,7 +5,7 @@ const Doctor = () => {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-   //get
+    //get
     const fetchDoctors = async () => {
       try {
         const response = await axios.get('http://localhost:8080/doctors');
@@ -15,24 +15,24 @@ const Doctor = () => {
       }
     };
 
-  
+
     fetchDoctors();
-  }, []); 
+  }, []);
 
   return (
     <div>
-  <center>
-  <h2>Doctors</h2>
+      <center>
+        <h2>Doctors</h2>
         {
-            doctors.map(doctor => (
+          doctors.map(doctor => (
             <div key={doctor.id}>
-                <p><strong>{doctor.name}</strong> - {doctor.specialization}</p>
-                <p>Doctor ID: {doctor.id}</p>
+              <p><strong>{doctor.name}</strong> - {doctor.specialization}</p>
+              <p>Doctor ID: {doctor.id}</p>
             </div>
-            ))
+          ))
         }
-    
-  </center>
+
+      </center>
     </div>
   );
 };
