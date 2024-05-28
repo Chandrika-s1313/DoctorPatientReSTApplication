@@ -8,7 +8,7 @@ const EditPatient = ({ patientId, onClose, onUpdate }) => {
     //get
     const fetchPatientData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/patients/${patientId}`);
+        const response = await axios.get(`http://hospitalmanagementbackend-env.eba-9stjzh6w.eu-north-1.elasticbeanstalk.com/patients/${patientId}`);
         setPatientData(response.data);
       } catch (error) {
         console.error('Error fetching patient data for editing:', error);
@@ -20,7 +20,7 @@ const EditPatient = ({ patientId, onClose, onUpdate }) => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:8080/patients/${patientId}`, patientData);
+      await axios.put(`http://hospitalmanagementbackend-env.eba-9stjzh6w.eu-north-1.elasticbeanstalk.com/patients/${patientId}`, patientData);
       onClose();
       onUpdate();
     } catch (error) {

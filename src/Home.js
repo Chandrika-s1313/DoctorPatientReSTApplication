@@ -12,8 +12,8 @@ const Home = () => {
 
     const fetchPatientsAndDoctors = async () => {
       try {
-        const patientsResponse = await axios.get('http://localhost:8080/patients'); // Replace with your actual endpoint
-        const doctorsResponse = await axios.get('http://localhost:8080/doctors'); // Replace with your actual endpoint
+        const patientsResponse = await axios.get(`http://hospitalmanagementbackend-env.eba-9stjzh6w.eu-north-1.elasticbeanstalk.com/patients`); // Replace with your actual endpoint
+        const doctorsResponse = await axios.get(`http://hospitalmanagementbackend-env.eba-9stjzh6w.eu-north-1.elasticbeanstalk.com/doctors`); // Replace with your actual endpoint
         setPatients(patientsResponse.data);
         setDoctors(doctorsResponse.data);
       } catch (error) {
@@ -47,7 +47,7 @@ const Home = () => {
 
   const handleDelete = async (patientId) => {
     try {
-      await axios.delete(`http://localhost:8080/patients/${patientId}`);
+      await axios.delete(`http://hospitalmanagementbackend-env.eba-9stjzh6w.eu-north-1.elasticbeanstalk.com/patients/${patientId}`);
 
       setPatients((prevPatients) => prevPatients.filter((patient) => patient.id !== patientId));
     } catch (error) {

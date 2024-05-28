@@ -34,7 +34,7 @@ const PatientForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/patients', patientData);
+      const response = await axios.post(`http://hospitalmanagementbackend-env.eba-9stjzh6w.eu-north-1.elasticbeanstalk.com/patients`, patientData);
       console.log('Patient created:', response.data);
       setPatientData({
         name: '',
